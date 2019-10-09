@@ -53,9 +53,7 @@ class Contribute extends Component {
     markdown: '',
   };
   componentDidMount() {
-    const mdPath = require('./contribute.md');
-
-    fetch(mdPath)
+    fetch(constants.CONTRIBUTE)
       .then(response => {
         return response.text();
       })
@@ -76,7 +74,7 @@ class Contribute extends Component {
         <Card className={classes.card}>
           <CardMedia
             className={classes.media}
-            image={constants.STATIC_URL.concat(constants.RL_PARADIGM)}
+            image={constants.RL_PARADIGM}
             title="RL Paradigm"
           />
         </Card>

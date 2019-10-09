@@ -63,7 +63,7 @@ class EnvironmentDetail extends Component {
     if (!(environment === undefined)) {
       const { currentAvatar } = this.props.environment;
       if (currentAvatar != null) {
-        filePath = currentAvatar.uploadPath;
+        filePath = constants.MEDIA_URL.concat(currentAvatar.url)
       }
     }
     return (
@@ -79,7 +79,7 @@ class EnvironmentDetail extends Component {
                   <Card className={classes.imgCardStyle}>
                     <CardMedia
                       className={classes.mediaStyle}
-                      image={constants.STATIC_URL.concat(filePath)}
+                      image={filePath}
                     />
                   </Card>
                 </Grid>
